@@ -19,7 +19,7 @@
 		<div id="map"></div>
 	`;
 
-   
+   var json = "";
 	class Box extends HTMLElement {
 		constructor() {
 			super();
@@ -38,7 +38,8 @@
 		}
 
         render(val, info, color) {
-            console.log(val + " " + info + " " + color);
+		json = val + " " + info + " " + color;
+            
 		}
 
 
@@ -63,5 +64,6 @@
 		}
 	}
     customElements.define("com-demo-gauge", Box);
+	console.log(json);
 })();
     
