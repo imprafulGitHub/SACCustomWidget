@@ -21,7 +21,7 @@
 
   
 	class Box extends HTMLElement {
-		json = "";
+		
 		constructor() {
 			super();
 			let shadowRoot = this.attachShadow({ mode: "open" });
@@ -39,12 +39,12 @@
 		}
 
         	render(val, info, color) {
-		   json = val + " " + info + " " + color;
+		   let json = val + " " + info + " " + color;
                    
 		}
 		
 	Info(){
-		return json;
+		return this.$value, this.$info, this.$color;
 	}
 	
 
@@ -70,6 +70,7 @@
 		}
 	}
     customElements.define("com-demo-gauge", Box);
-  
+    var info = new Box();
+    console.log(info.Info());
 })();
     
