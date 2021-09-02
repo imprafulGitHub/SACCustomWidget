@@ -21,7 +21,9 @@
 		
 		<div id="map"></div>
 	`;
-        
+  function load(prop){
+	  console.log(prop);
+  }
 	
 
   
