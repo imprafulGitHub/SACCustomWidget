@@ -22,27 +22,16 @@
 	`;
   function load(prop){
 	  console.log("Data - " + prop);
-	  const script = document.createElement('script');
-          script.type = 'text/javascript';
-	  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js';
-	  document.head.appendChild(script);
-	  script.src = 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
-	  document.head.appendChild(script);
-	  script.src = 'https://cdn.jsdelivr.net/npm/gcoord@0.2.3/dist/gcoord.js';
-	  document.head.appendChild(script);
-	  script.src = 'https://maptalks.org/maptalks.three/demo/js/maptalks.js';
-	  document.head.appendChild(script);
-	  script.src = 'https://cdn.jsdelivr.net/npm/three@0.104.0/build/three.min.js';
-	  document.head.appendChild(script);
-	  script.src = 'https://cdn.jsdelivr.net/npm/maptalks.three@latest/dist/maptalks.three.js';
-	  document.head.appendChild(script);
-	  script.src = 'https://cdn.jsdelivr.net/npm/three@0.104.0/examples/js/libs/stats.min.js';
-	  document.head.appendChild(script);
+	  const script1 = document.createElement('script');
+          script1.type = 'text/javascript';
+	  script1.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+	  document.head.appendChild(script1);
+	  const script2 = document.createElement('script');
+	  script2.type = 'text/javascript';
+	  script2.src = 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
+	  document.head.appendChild(script2);
 	  
-	  const style = document.createElement('style');
-          style.type = 'text/css';
-	  style.href = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
-	  document.head.appendChild(style);
+	  
   }
 	
 
