@@ -24,7 +24,7 @@
 	  console.log("Data - " + prop);
 	  const script1 = document.createElement('script');
           script1.type = 'text/javascript';
-	  script1.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+	  script1.src = 'https://cdn.jsdelivr.net/npm/gcoord@0.2.3/dist/gcoord.js';
 	  document.head.appendChild(script1);
 	  const script2 = document.createElement('script');
 	  script2.type = 'text/javascript';
