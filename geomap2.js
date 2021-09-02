@@ -21,7 +21,7 @@
 
   
 	class Box extends HTMLElement {
-		var json = "";
+		json = "";
 		constructor() {
 			super();
 			let shadowRoot = this.attachShadow({ mode: "open" });
