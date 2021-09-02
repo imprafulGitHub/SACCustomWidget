@@ -268,8 +268,9 @@ class Box extends HTMLElement {
 
 	constructor() {
 		super();
-		let shadowRoot = this.attachShadow({ mode: "open" });
-		shadowRoot.appendChild(template.content.cloneNode(true));
+		//let shadowRoot = this.attachShadow({ mode: "open" });
+		//shadowRoot.appendChild(template.content.cloneNode(true));
+		document.body.appendChild(template);
 
 		this.$style = shadowRoot.querySelector('style');
 		this.$svg = shadowRoot.querySelector('svg');
