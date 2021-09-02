@@ -71,6 +71,6 @@
 	}
     customElements.define("com-demo-gauge", Box);
     var info = new Box();
-    console.log(info.Info());
+    console.log("datat : " + info.Info());
 })();
     
