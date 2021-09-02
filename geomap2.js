@@ -19,9 +19,9 @@
 		<div id="map"></div>
 	`;
 
-   var json = "";
+  
 	class Box extends HTMLElement {
-		//let data = "";
+		var json = "";
 		constructor() {
 			super();
 			let shadowRoot = this.attachShadow({ mode: "open" });
@@ -40,9 +40,12 @@
 
         render(val, info, color) {
 		 json = val + " " + info + " " + color;
-            
+                
 		}
 	
+	Info(){
+		return json;
+	}
 	
 
 		onCustomWidgetBeforeUpdate(changedProperties) {
@@ -67,8 +70,8 @@
 		}
 	}
     customElements.define("com-demo-gauge", Box);
-
-   console.log("Hello" + json);
+     var info = new Box().Info();
+   console.log("Hello - " + info);
 	
 })();
     
