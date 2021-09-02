@@ -24,20 +24,21 @@
 	  if(!initCalled){
 		  initCalled = true;  
 		  console.log("Data - " + prop);
-		  const script1 = document.createElement('script');
-		  script1.type = 'text/javascript';
-		  script1.src = 'https://cdn.jsdelivr.net/npm/gcoord@0.2.3/dist/gcoord.js';
-		  document.head.appendChild(script1);
+		  
+		  const script3 = document.createElement('script');
+		  script3.type = 'text/javascript';
+		  script3.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+		  document.head.appendChild(script3);
 
 		  const script2 = document.createElement('script');
 		  script2.type = 'text/javascript';
 		  script2.src = 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
 		  document.head.appendChild(script2);
-
-		  const script3 = document.createElement('script');
-		  script3.type = 'text/javascript';
-		  script3.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js';
-		  document.head.appendChild(script3);
+		  
+		  const script1 = document.createElement('script');
+		  script1.type = 'text/javascript';
+		  script1.src = 'https://cdn.jsdelivr.net/npm/gcoord@0.2.3/dist/gcoord.js';
+		  document.head.appendChild(script1);
 
 		  const script4 = document.createElement('script');
 		  script4.type = 'text/javascript';
