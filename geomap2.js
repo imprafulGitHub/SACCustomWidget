@@ -43,9 +43,7 @@
             console.log(data);
 		}
 	
-	Info(){
-		return this.data;
-	}
+	
 
 		onCustomWidgetBeforeUpdate(changedProperties) {
 			this._props = { ...this._props, ...changedProperties };
@@ -69,7 +67,7 @@
 	}
     customElements.define("com-demo-gauge", Box);
 
-    var inf = new Box().Info();
-	console.log("Hello " + inf);
+   
+	
 })();
     
