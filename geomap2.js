@@ -1,7 +1,6 @@
 
 (function () {
-	import '@https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
-        import { spinner } from 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
+	
 	let template = document.createElement("template");
 	template.innerHTML = `
 		<style>
@@ -23,6 +22,10 @@
 	`;
   function load(prop){
 	  console.log(prop);
+	  const script = document.createElement('script');
+          script.type = 'text/javascript';
+	  script.src = 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
+	  document.head.appendChild(script);
   }
 	
 
