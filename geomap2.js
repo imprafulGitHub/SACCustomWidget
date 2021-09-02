@@ -68,7 +68,8 @@
 		}
 	}
     customElements.define("com-demo-gauge", Box);
+
     var inf = new Box().Info();
-	console.log(inf);
+	console.log("Hello " + inf);
 })();
     
