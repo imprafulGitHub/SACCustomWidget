@@ -1,5 +1,7 @@
 
 (function () {
+	import '@https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
+        import { spinner } from 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
 	let template = document.createElement("template");
 	template.innerHTML = `
 		<style>
@@ -20,9 +22,8 @@
 		<div id="map"></div>
 	`;
         
-	function load(prop){
-           console.log("Data - " + prop);
-	}
+	
+
   
 	class Box extends HTMLElement {
 		
