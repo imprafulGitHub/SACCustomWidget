@@ -21,7 +21,7 @@
 
   
 	class Box extends HTMLElement {
-		
+		var json = "";
 		constructor() {
 			super();
 			let shadowRoot = this.attachShadow({ mode: "open" });
@@ -39,10 +39,13 @@
 		}
 
         	render(val, info, color) {
-		  var  json = val + " " + info + " " + color;
-                   console.log(json);
+		   json = val + " " + info + " " + color;
+                   
 		}
-	
+		
+	Info(){
+		return json;
+	}
 	
 
 		onCustomWidgetBeforeUpdate(changedProperties) {
