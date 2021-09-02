@@ -1,14 +1,7 @@
+import '@https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
 (function () {
 	let template = document.createElement("template");
 	template.innerHTML = `
-        	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gcoord@0.2.3/dist/gcoord.js"></script>
-		<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css">
-		<script type="text/javascript" src="https://maptalks.org/maptalks.three/demo/js/maptalks.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/three@0.104.0/build/three.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/maptalks.three@latest/dist/maptalks.three.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/three@0.104.0/examples/js/libs/stats.min.js"></script>
 		<style>
 			html,
 			body {
