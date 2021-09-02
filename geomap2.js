@@ -70,8 +70,8 @@
 		}
 	}
     customElements.define("com-demo-gauge", Box);
-     var info = new Box().Info();
-   console.log("Hello - " + info);
+    // var info = new Box().Info();
+  // console.log("Hello - " + info);
 	
 })();
     
