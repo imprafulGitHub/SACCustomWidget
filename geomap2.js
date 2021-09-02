@@ -29,36 +29,43 @@
 		  script3.type = 'text/javascript';
 		  script3.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js';
 		  document.head.appendChild(script3);
+		  eval(script3);
 
 		  const script2 = document.createElement('script');
 		  script2.type = 'text/javascript';
 		  script2.src = 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
 		  document.head.appendChild(script2);
+		   eval(script2);
 		  
 		  const script1 = document.createElement('script');
 		  script1.type = 'text/javascript';
 		  script1.src = 'https://cdn.jsdelivr.net/npm/gcoord@0.2.3/dist/gcoord.js';
 		  document.head.appendChild(script1);
+		   eval(script1);
 
 		  const script4 = document.createElement('script');
 		  script4.type = 'text/javascript';
 		  script4.src = 'https://maptalks.org/maptalks.three/demo/js/maptalks.js';
 		  document.head.appendChild(script4);
+		   eval(script4);
 
 		  const script5 = document.createElement('script');
 		  script5.type = 'text/javascript';
 		  script5.src = 'https://cdn.jsdelivr.net/npm/three@0.104.0/build/three.min.js';
 		  document.head.appendChild(script5);
+		   eval(script5);
 
 		  const script6 = document.createElement('script');
 		  script6.type = 'text/javascript';
 		  script6.src = 'https://cdn.jsdelivr.net/npm/maptalks.three@latest/dist/maptalks.three.js';
 		  document.head.appendChild(script6);
+		   eval(script6);
 
 		  const script7 = document.createElement('script');
 		  script7.type = 'text/javascript';
 		  script7.src = 'https://cdn.jsdelivr.net/npm/three@0.104.0/examples/js/libs/stats.min.js';
 		  document.head.appendChild(script7);
+		   eval(script7);
 
 		  //const style = document.createElement('style');
 		  //style.type = 'text/css';
