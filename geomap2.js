@@ -40,7 +40,7 @@
 
         render(val, info, color) {
 		data = val + " " + info + " " + color;
-            
+            console.log(data);
 		}
 	
 	Info(){
