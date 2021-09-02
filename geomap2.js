@@ -38,14 +38,11 @@
 			this._props = {};
 		}
 
-        render(val, info, color) {
-		 json = val + " " + info + " " + color;
+        	render(val, info, color) {
+		    json = val + " " + info + " " + color;
                 
 		}
 	
-	Info(){
-		return json;
-	}
 	
 
 		onCustomWidgetBeforeUpdate(changedProperties) {
@@ -70,8 +67,6 @@
 		}
 	}
     customElements.define("com-demo-gauge", Box);
-    // var info = new Box().Info();
-  // console.log("Hello - " + info);
-	
+  
 })();
     
