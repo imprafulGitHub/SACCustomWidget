@@ -63,12 +63,12 @@
             }
             
 			this.render(this.$value, this.$info, this.$color);
-			console.log("Hello");
+			
 		}
 	}
     customElements.define("com-demo-gauge", Box);
 
-   
+   console.log("Hello");
 	
 })();
     
