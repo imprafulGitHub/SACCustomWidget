@@ -96,11 +96,13 @@
 	  }
   }
 	
-    var bars = [], selectMesh = [];
-    var material = new THREE.MeshLambertMaterial({ color: 'rgb(38,160,146)', transparent: true, opacity: 1 });
-    var highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
+    
 	
     function addBar(scene, prop) {
+	bars = [], selectMesh = [];
+        material = new THREE.MeshLambertMaterial({ color: 'rgb(38,160,146)', transparent: true, opacity: 1 });
+        highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
+	    
         fetch('https://raw.githubusercontent.com/jainnaman280/GeoMap/main/extrude.json').then((function (res) {
             return res.json();
         })).then(function (json) {
