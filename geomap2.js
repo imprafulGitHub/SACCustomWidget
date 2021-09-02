@@ -1,4 +1,4 @@
-import '@https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
+
 (function () {
 	let template = document.createElement("template");
 	template.innerHTML = `
@@ -19,7 +19,10 @@ import '@https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
 		
 		<div id="map"></div>
 	`;
-
+        
+	function load(prop){
+           console.log("Data - " + prop);
+	}
   
 	class Box extends HTMLElement {
 		
@@ -62,7 +65,7 @@ import '@https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
 			if ("color" in changedProperties) {
 				this.$color = changedProperties["color"];
             		}
-            
+                        load(this.$value + this.$info + this.$color);
 			this.render(this.$value, this.$info, this.$color);
 			console.log("hello");
 		}
