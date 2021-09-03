@@ -2,14 +2,14 @@
            
             LoadScript();
             function LoadScript() {
-                var btn = document.createElement("div");   
-                btn.setAttribute("id", "Geomap");           
-                document.body.appendChild(btn);   
+                //var btn = document.createElement("div");   
+                //btn.setAttribute("id", "Geomap");           
+                //document.body.appendChild(btn);   
 
-                const style1 = document.createElement('style');
-                style1.type = 'text/css';
-                style1.href = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
-                document.head.appendChild(style1);
+                //const style1 = document.createElement('style');
+                //style1.type = 'text/css';
+                //style1.src = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
+                //document.head.appendChild(style1);
                 
 
 
@@ -49,7 +49,7 @@
                     script6.src = 'https://cdn.jsdelivr.net/npm/maptalks.three@latest/dist/maptalks.three.js';
                     document.head.appendChild(script6);
                     eval(script6);
-                }, 5000);
+                }, 2000);
                 
                 const script7 = document.createElement('script');
                 script7.type = 'text/javascript';
@@ -57,40 +57,48 @@
                 document.head.appendChild(script7);
                 eval(script7);
 
-                const style = document.createElement('style');
-                style.type = 'text/css';
-                style.href = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
-                document.head.appendChild(style);
-                eval(style);
+                //const style = document.createElement('style');
+                //style.type = 'text/css';
+                //style.href = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
+                //document.head.appendChild(style);
+                //eval(style);
   
 
           }
 
             let template = document.createElement("template");
             template.innerHTML = `
+              
   		      <style>
+                 @import "https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css";
   			      html,
   			      body {
   				      margin: 0px;
   				      height: 100%;
   				      width: 100%;
   			      }
-  			      #mapId {
+  			      #map {
   				      width: 100%;
   				      height: 100%;
   				      background-color: #b2c2d2
   			      }
+                  .maptalks-attribution{
+                     display:none;
+                    }
+                    
   		      </style>
   		
-		      <div id="map">Id</div>
+		      <div id="map"></div>
   	      `;
 
             let initCalled = false;
-            function load(prop) {
+            function load(prop, ele) {
                 if (!initCalled) {
                     initCalled = true;
                     console.log("Data - " + prop);
-                    map = new maptalks.Map("Geomap", {
+                    console.log("Element" + ele);
+
+                    map = new maptalks.Map(ele, {
                         "center": [113.98448073352165, 22.53682833203598],
                         zoom: 15,
                         pitch: 65,
@@ -108,21 +116,23 @@
                     threeLayer.prepareToDraw = function (gl, scene, camera) {
                         stats = new Stats();
                         stats.domElement.style.zIndex = 100;
-                        document.getElementById('Geomap').appendChild(stats.domElement);
+                        //document.getElementById('Geomap').appendChild(stats.domElement);
+                        ele.appendChild(stats.domElement);
 
                         var light = new THREE.DirectionalLight(0xffffff);
                         light.position.set(0, -10, 10).normalize();
                         scene.add(light);
                         scene.add(new THREE.AmbientLight(0xffffff, 0.2));
-                        addBar(scene, prop);
+                        addBar(scene, prop, ele);
 
                     };
                     threeLayer.addTo(map);
 
+
                 }
             }
 
-            function addBar(scene, prop) {
+            function addBar(scene, prop, ele) {
                 bars = [], selectMesh = [];
                 material = new THREE.MeshLambertMaterial({ color: 'rgb(38,160,146)', transparent: true, opacity: 1 });
                 highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
@@ -214,7 +224,7 @@
                     });
                 });
                 animation();
-                initGui();
+                initGui(ele);
             }
 
             function animation() {
@@ -227,7 +237,7 @@
                 requestAnimationFrame(animation);
             }
 
-            function initGui() {
+            function initGui(ele) {
                 var params = {
                     add: true,
                     color: material.color.getStyle(),
@@ -272,6 +282,11 @@
                     });
                 });
                 gui.add(params, 'animateShow');
+
+                $('.dg,.ac').css('display', 'none');
+
+                const rem = ele.childNodes[1];
+                rem.style.display = 'none';
             }
 
             function animateShow() {
@@ -280,6 +295,7 @@
                         duration: 3000
                     });
                 });
+
             }
 
             class Box extends HTMLElement {
@@ -289,10 +305,10 @@
                     shadowRoot.appendChild(template.content.cloneNode(true));
 
                     setTimeout(function () {
-                        load("");
-                    }, 10000);
+                        load("", shadowRoot.getElementById("map"));
+                    }, 3000);
 
-                                    }
+                }
             }
             window.customElements.define("com-demo-gauge", Box);
         })();
