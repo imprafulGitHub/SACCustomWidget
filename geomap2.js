@@ -8,7 +8,7 @@
 
                 const style1 = document.createElement('style');
                 style1.type = 'text/css';
-                style.src = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
+                style.href = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
                 document.head.appendChild(style);
                 eval(style);
 
