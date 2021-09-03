@@ -8,9 +8,9 @@
 
                 const style1 = document.createElement('style');
                 style1.type = 'text/css';
-                style.href = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
-                document.head.appendChild(style);
-                eval(style);
+                style1.href = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
+                document.head.appendChild(style1);
+                
 
 
                 const script3 = document.createElement('script');
