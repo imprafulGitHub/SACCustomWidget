@@ -1,6 +1,6 @@
-(function () {
+window.onload = function() {
            
-            //LoadScript();
+            LoadScript();
             function LoadScript() {
                 //var btn = document.createElement("div");   
                 //btn.setAttribute("id", "Geomap");           
@@ -68,17 +68,9 @@
 
             let template = document.createElement("template");
             template.innerHTML = `
-              <script>
-	        @import "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js";
-	       	@import "https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js";
-		@import "https://cdn.jsdelivr.net/npm/gcoord@0.2.3/dist/gcoord.js";
-		@import "https://maptalks.org/maptalks.three/demo/js/maptalks.js";
-		@import "https://cdn.jsdelivr.net/npm/three@0.104.0/build/three.min.js";
-		@import "https://cdn.jsdelivr.net/npm/maptalks.three@latest/dist/maptalks.three.js";
-		@import "https://cdn.jsdelivr.net/npm/three@0.104.0/examples/js/libs/stats.min.js";
-	      </script>
+              
   		      <style>
-                 @import "https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css";
+                 	      @import "https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css";
   			      html,
   			      body {
   				      margin: 0px;
@@ -90,9 +82,9 @@
   				      height: 100%;
   				      background-color: #b2c2d2
   			      }
-                  .maptalks-attribution{
-                     display:none;
-                    }
+			     .maptalks-attribution{
+			        display:none;
+			      }
                     
   		      </style>
   		
@@ -319,4 +311,4 @@
                 }
             }
             window.customElements.define("com-demo-gauge", Box);
-        })();
+        };
