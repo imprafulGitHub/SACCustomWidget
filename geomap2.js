@@ -1,4 +1,4 @@
-window.onload = function() {
+(function () {
            
             LoadScript();
             function LoadScript() {
@@ -311,4 +311,4 @@ window.onload = function() {
                 }
             }
             window.customElements.define("com-demo-gauge", Box);
-        };
+       })();
