@@ -96,8 +96,8 @@
             function load(prop, ele) {
                 if (!initCalled) {
                     initCalled = true;
-                    console.log("Data - " + prop);
-                    console.log("Element" + ele);
+                    console.log("Data - " );
+                    console.log("Element" );
 
                     map = new maptalks.Map(ele, {
                         "center": [113.98448073352165, 22.53682833203598],
