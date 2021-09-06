@@ -1,6 +1,6 @@
 (function () {
            
-            LoadScript();
+            //LoadScript();
             function LoadScript() {
                 //var btn = document.createElement("div");   
                 //btn.setAttribute("id", "Geomap");           
