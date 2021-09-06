@@ -1,6 +1,9 @@
 (function () {
            
-            LoadScript();
+	setTimeout(function () {
+		LoadScript();
+	}, 2000);
+            
             function LoadScript() {
                 //var btn = document.createElement("div");   
                 //btn.setAttribute("id", "Geomap");           
@@ -49,7 +52,7 @@
                     script6.src = 'https://cdn.jsdelivr.net/npm/maptalks.three@latest/dist/maptalks.three.js';
                     document.head.appendChild(script6);
                     eval(script6);
-                }, 2000);
+                }, 3000);
                 
                 const script7 = document.createElement('script');
                 script7.type = 'text/javascript';
@@ -306,7 +309,7 @@
 
                     setTimeout(function () {
                         load("", shadowRoot.getElementById("map"));
-                    }, 3000);
+                    }, 5000);
 
                 }
             }
