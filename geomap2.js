@@ -138,7 +138,7 @@
                 material = new THREE.MeshLambertMaterial({ color: 'rgb(38,160,146)', transparent: true, opacity: 1 });
                 highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
 
-                fetch('https://raw.githubusercontent.com/jainnaman280/GeoMap/main/extrude.json').then((function (res) {
+                fetch('https://imprafulgithub.github.io/SACCustomWidget/extrude.json').then((function (res) {
                     return res.json();
                 })).then(function (json) {
                     const data = json.features.slice(0, Infinity).map(function (dataItem) {
