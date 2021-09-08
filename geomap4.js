@@ -1,6 +1,6 @@
 (function () {
            
-	
+	   this.LoadScript();
             
              LoadScript() {
 
@@ -295,7 +295,7 @@
                     let shadowRoot = this.attachShadow({ mode: "open" });
                     shadowRoot.appendChild(template.content.cloneNode(true));
 
-                    this.LoadScript();
+                 
                         this.load("", shadowRoot.getElementById("map"));
                    
 
