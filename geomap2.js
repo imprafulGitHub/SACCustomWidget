@@ -285,8 +285,7 @@
                     
 		    var prop = '{"type":"FeatureCollection","features":['+
 				'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"78.68"},"geometry": {"type":"Point","coordinates":[113.950375,22.534875]}},'+
-				'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}
-				]}';
+				'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
 		    
                     setTimeout(function () {
                         load(prop, shadowRoot.getElementById("map"));
