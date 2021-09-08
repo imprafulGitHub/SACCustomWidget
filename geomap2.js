@@ -73,8 +73,7 @@
             function load(prop, ele) {
                 if (!initCalled) {
                     initCalled = true;
-                    console.log("Data - " );
-                    console.log("Element" );
+                    console.log("Data - " + JSON.parse(prop));
 
                     map = new maptalks.Map(ele, {
                         "center": [113.98448073352165, 22.53682833203598],
@@ -114,7 +113,9 @@
                 bars = [], selectMesh = [];
                 material = new THREE.MeshLambertMaterial({ color: 'rgb(38,160,146)', transparent: true, opacity: 1 });
                 highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
-
+                
+		var _json = JSON.parse(prop);
+		 console.log(_json);   
                 fetch('https://imprafulgithub.github.io/SACCustomWidget/extrude.json').then((function (res) {
                     return res.json();
                 })).then(function (json) {
@@ -281,9 +282,14 @@
                     super();
                     let shadowRoot = this.attachShadow({ mode: "open" });
                     shadowRoot.appendChild(template.content.cloneNode(true));
-
+                    
+		    var prop = '{"type":"FeatureCollection","features":['+
+				'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"78.68"},"geometry": {"type":"Point","coordinates":[113.950375,22.534875]}},'+
+				'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}
+				]}';
+		    
                     setTimeout(function () {
-                        load("", shadowRoot.getElementById("map"));
+                        load(prop, shadowRoot.getElementById("map"));
                     }, 3000);
 
                 }
