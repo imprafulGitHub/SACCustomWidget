@@ -305,9 +305,9 @@
                     let shadowRoot = this.attachShadow({ mode: "open" });
                     shadowRoot.appendChild(template.content.cloneNode(true));
 
-                    setTimeout(function () {
-                        load("", shadowRoot.getElementById("map"));
-                    }, 3000);
+                    //setTimeout(function () {
+                    //    load("", shadowRoot.getElementById("map"));
+                   // }, 3000);
 
                 }
             }
