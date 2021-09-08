@@ -3,22 +3,12 @@
 	
             LoadScript();
             function LoadScript() {
-                //var btn = document.createElement("div");   
-                //btn.setAttribute("id", "Geomap");           
-                //document.body.appendChild(btn);   
 
-                //const style1 = document.createElement('style');
-                //style1.type = 'text/css';
-                //style1.src = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
-                //document.head.appendChild(style1);
-                
-
-
-                const script3 = document.createElement('script');
-                script3.type = 'text/javascript';
-                script3.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js';
-                document.head.appendChild(script3);
-                eval(script3);
+                //const script3 = document.createElement('script');
+                //script3.type = 'text/javascript';
+                //script3.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+                //document.head.appendChild(script3);
+                //eval(script3);
 
                 const script2 = document.createElement('script');
                 script2.type = 'text/javascript';
