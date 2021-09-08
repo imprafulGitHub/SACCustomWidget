@@ -4,12 +4,6 @@
             LoadScript();
             function LoadScript() {
 
-                //const script3 = document.createElement('script');
-                //script3.type = 'text/javascript';
-                //script3.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js';
-                //document.head.appendChild(script3);
-                //eval(script3);
-
                 const script2 = document.createElement('script');
                 script2.type = 'text/javascript';
                 script2.src = 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
@@ -47,13 +41,6 @@
                 script7.src = 'https://cdn.jsdelivr.net/npm/three@0.104.0/examples/js/libs/stats.min.js';
                 document.head.appendChild(script7);
                 eval(script7);
-
-                //const style = document.createElement('style');
-                //style.type = 'text/css';
-                //style.href = 'https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css';
-                //document.head.appendChild(style);
-                //eval(style);
-  
 
           }
 
