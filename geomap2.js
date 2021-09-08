@@ -114,12 +114,10 @@
                 material = new THREE.MeshLambertMaterial({ color: 'rgb(38,160,146)', transparent: true, opacity: 1 });
                 highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
                 
-		var _json = JSON.parse(prop);
-		 console.log(_json);   
-                fetch('https://imprafulgithub.github.io/SACCustomWidget/extrude.json').then((function (res) {
-                    return res.json();
-                })).then(function (json) {
-                    const data = json.features.slice(0, Infinity).map(function (dataItem) {
+		let data = "";
+                var json = JSON.parse(prop);
+                for (var i = 0; i < json.features.length; i++) {
+                     data = json.features.slice(0, Infinity).map(function (dataItem) {
                         dataItem = gcoord.transform(dataItem, gcoord.AMap, gcoord.WGS84);
                         return {
                             coordinate: dataItem.geometry.coordinates,
@@ -131,77 +129,78 @@
                             //value: Math.random() * 10000,
                             topColor: '#fff'
                         }
-                    });
-                    const time = 'time';
-                    console.time(time);
-                    const box = threeLayer.toBoxs(data, {}, material);
-                    bars.push(box);
-                    console.timeEnd(time);
+                     });
+                   
+                }
+                const time = 'time';
+                console.time(time);
+                const box = threeLayer.toBoxs(data, {}, material);
+                bars.push(box);
+                console.timeEnd(time);
 
-                    // tooltip test
-                    box.setToolTip('hello', {
-                        showTimeout: 0,
-                        eventsPropagation: true,
-                        dx: 10
-                    });
-                    threeLayer.addMesh(bars);
-
-
-                    //infowindow test
-                    box.setInfoWindow({
-                        content: 'hello world,height:',
-                        title: 'message',
-                        animationDuration: 0,
-                        autoOpenOn: false
-                    });
-
-
-                    ['click', 'empty', 'mousemove'].forEach(function (eventType) {
-                        box.on(eventType, function (e) {
-                            const select = e.selectMesh;
-                            if (e.type === 'empty' && selectMesh.length) {
-                                threeLayer.removeMesh(selectMesh);
-                                selectMesh = [];
-                            }
-
-                            let data, baseObject;
-                            if (select) {
-                                data = select.data;
-                                baseObject = select.baseObject;
-                                if (baseObject && !baseObject.isAdd) {
-                                    baseObject.setSymbol(highlightmaterial);
-                                    threeLayer.addMesh(baseObject);
-                                    selectMesh.push(baseObject);
-                                }
-                            }
-
-
-                            if (selectMesh.length > 20) {
-                                threeLayer.removeMesh(selectMesh);
-                                selectMesh = [];
-                            }
-                            // override tooltip
-                            if (e.type === 'mousemove' && data) {
-                                const height = data.value;
-                                const tooltip = this.getToolTip();
-                                tooltip._content = `value:${height}`;
-                            }
-                            //             //override infowindow
-                            if (e.type === 'click' && data) {
-                                const height = data.value;
-                                const city = data.city;
-                                const zip = data.zip;
-                                const infoWindow = this.getInfoWindow();
-                                const content = 'City : ' + city + '<br> ZipCode : ' + zip + '<br> value : ' + height;
-                                infoWindow.setContent(content);
-                                if (infoWindow && (!infoWindow._owner)) {
-                                    infoWindow.addTo(this);
-                                }
-                                this.openInfoWindow(e.coordinate);
-                            }
-                        });
-                    });
+                // tooltip test
+                box.setToolTip('hello', {
+                    showTimeout: 0,
+                    eventsPropagation: true,
+                    dx: 10
                 });
+                threeLayer.addMesh(bars);
+
+
+                //infowindow test
+                box.setInfoWindow({
+                    content: 'hello world,height:',
+                    title: 'message',
+                    animationDuration: 0,
+                    autoOpenOn: false
+                });
+
+
+                ['click', 'empty', 'mousemove'].forEach(function (eventType) {
+                    box.on(eventType, function (e) {
+                        const select = e.selectMesh;
+                        if (e.type === 'empty' && selectMesh.length) {
+                            threeLayer.removeMesh(selectMesh);
+                            selectMesh = [];
+                        }
+
+                        let data, baseObject;
+                        if (select) {
+                            data = select.data;
+                            baseObject = select.baseObject;
+                            if (baseObject && !baseObject.isAdd) {
+                                baseObject.setSymbol(highlightmaterial);
+                                threeLayer.addMesh(baseObject);
+                                selectMesh.push(baseObject);
+                            }
+                        }
+
+
+                        if (selectMesh.length > 20) {
+                            threeLayer.removeMesh(selectMesh);
+                            selectMesh = [];
+                        }
+                        // override tooltip
+                        if (e.type === 'mousemove' && data) {
+                            const height = data.value;
+                            const tooltip = this.getToolTip();
+                            tooltip._content = `value:${height}`;
+                        }
+                        //             //override infowindow
+                        if (e.type === 'click' && data) {
+                            const height = data.value;
+                            const city = data.city;
+                            const zip = data.zip;
+                            const infoWindow = this.getInfoWindow();
+                            const content = 'City : ' + city + '<br> ZipCode : ' + zip + '<br> value : ' + height;
+                            infoWindow.setContent(content);
+                            if (infoWindow && (!infoWindow._owner)) {
+                                infoWindow.addTo(this);
+                            }
+                            this.openInfoWindow(e.coordinate);
+                        }
+                    });
+                }); 
                 animation();
                 initGui(ele);
             }
@@ -283,9 +282,16 @@
                     let shadowRoot = this.attachShadow({ mode: "open" });
                     shadowRoot.appendChild(template.content.cloneNode(true));
                     
-		    var prop = '{"type":"FeatureCollection","features":['+
-				'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"78.68"},"geometry": {"type":"Point","coordinates":[113.950375,22.534875]}},'+
-				'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
+		    var prop = '{"type":"FeatureCollection","features":[' +
+                        '{"type": "Feature", "properties": { "City": "New York", "Country": "US", "Contract": "30000033", "ZipCode": "10059", "Amount": "78.68" }, "geometry": { "type": "Point", "coordinates": [113.950375, 22.534875] } },' +
+                        '{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.950625, 22.534875] } },' +
+                        '{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"98.68"}, "geometry": { "type":"Point", "coordinates": [113.930625, 22.516125] } },' +
+                        '{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"78.68"}, "geometry": { "type":"Point", "coordinates": [113.930375, 22.516125] } },' +
+                        '{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.930125, 22.515625] } },' +
+                        '{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"98.68"}, "geometry": { "type":"Point", "coordinates": [113.930125, 22.515875] } },' +
+                        '{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"78.68"}, "geometry": { "type":"Point", "coordinates": [113.930375, 22.515625] } },' +
+                        '{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.929625, 22.515625] } },'+
+                        '{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
 		    
                     setTimeout(function () {
                         load(prop, shadowRoot.getElementById("map"));
