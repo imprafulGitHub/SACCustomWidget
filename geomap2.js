@@ -294,13 +294,32 @@
                         '{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
 		    
 			//var prop = '{"type":"FeatureCollection","features":[' + this.$info ;
-			console.log("Json Data - " + '{"type":"FeatureCollection","features":[' + info.slice(0, -2));
+			
 			
                     setTimeout(function () {
                         load(prop, shadowRoot.getElementById("map"));
                     }, 3000);
 
                 }
+		onCustomWidgetBeforeUpdate(changedProperties) {
+			this._props = { ...this._props, ...changedProperties };
+		}
+
+		onCustomWidgetAfterUpdate(changedProperties) {
+			if ("value" in changedProperties) {
+				this.$value = changedProperties["value"];
+			}
+			
+			if ("info" in changedProperties) {
+				this.$info = changedProperties["info"];
+			}
+			
+			if ("color" in changedProperties) {
+				this.$color = changedProperties["color"];
+			}
+			console.log("Json Data - " + '{"type":"FeatureCollection","features":[' + this.$info.slice(0, -2));
+			//this.render(this.$value, this.$info, this.$color);
+		}   
             }
             window.customElements.define("com-demo-gauge", Box);
        })();
