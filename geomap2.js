@@ -76,7 +76,7 @@
                     //console.log("Data - " + JSON.parse(prop));
 
                     map = new maptalks.Map(ele, {
-                        "center": [113.98448073352165, 22.53682833203598],
+                        "center": [-73.9277,42.4561],
                         zoom: 15,
                         pitch: 65,
                         baseLayer: new maptalks.TileLayer('tile', {
