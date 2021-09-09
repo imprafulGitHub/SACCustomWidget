@@ -296,9 +296,9 @@
 			//var prop = '{"type":"FeatureCollection","features":[' + this.$info ;
 			
 			
-                    setTimeout(function () {
-                        load(prop, shadowRoot.getElementById("map"));
-                    }, 3000);
+                    //setTimeout(function () {
+                    //    load(prop, shadowRoot.getElementById("map"));
+                    //}, 3000);
 
                 }
 		onCustomWidgetBeforeUpdate(changedProperties) {
@@ -317,8 +317,12 @@
 			if ("color" in changedProperties) {
 				this.$color = changedProperties["color"];
 			}
-			console.log("Json Data - " + '{"type":"FeatureCollection","features":[' + this.$info.slice(0, -2));
+			var data = '{"type":"FeatureCollection","features":[' + this.$info.slice(0, -3) + "]}'";
+			console.log("Json Data - " + '{"type":"FeatureCollection","features":[' + this.$info.slice(0, -3) + "]}'");
 			//this.render(this.$value, this.$info, this.$color);
+			setTimeout(function () {
+		            load(data, shadowRoot.getElementById("map"));
+			}, 3000);
 		}   
             }
             window.customElements.define("com-demo-gauge", Box);
