@@ -294,7 +294,7 @@
                         '{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
 		    
 			//var prop = '{"type":"FeatureCollection","features":[' + this.$info ;
-			console.log("Json Data - " + this.$info);
+			//console.log("Json Data - " + this.$info);
 			
                     setTimeout(function () {
                         load(prop, shadowRoot.getElementById("map"));
