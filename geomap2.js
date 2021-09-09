@@ -318,7 +318,10 @@
 			
 			//var data = '{"type":"FeatureCollection","features":[' + this.$info.slice(0, -3) + "]}'";
 			//this.render(this.$value, this.$info, this.$color);
-			console.log("Json Data - " + this.$value + " - " + this.$info + " - " + this.$color);
+			if(this.$info != null){
+				console.log("Json Data - " + this.$value + " - " + this.$info + " - " + this.$color);
+			}
+			
 			
 		}   
             }
