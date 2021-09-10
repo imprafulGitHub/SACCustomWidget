@@ -322,7 +322,7 @@
 			if(this.$info != null){
 				var inf = this.$info.slice(1);
 				var data = '{"type":"FeatureCollection","features":[' + inf.slice(0, -3) + "]}";
-				console.log("Json Data - "+ JSON.parse(data));
+				console.log("Json Data - "+ data);
 			}
 			
 			
