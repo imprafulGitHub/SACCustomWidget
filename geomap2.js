@@ -320,8 +320,8 @@
 			
 			//this.render(this.$value, this.$info, this.$color);
 			if(this.$info != null){
-				var inf = this.$info.slice(1);
-				var data = '{"type":"FeatureCollection","features":[' + inf.slice(0, -3) + "]}";
+				//var inf = this.$info.slice(1);
+				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
 				console.log("Json Data - "+ JSON.parse(data));
 			}
 			
