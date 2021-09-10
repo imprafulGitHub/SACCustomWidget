@@ -1,5 +1,4 @@
 (function () {
-           
 	
             LoadScript();
             function LoadScript() {
@@ -321,8 +320,9 @@
 			
 			//this.render(this.$value, this.$info, this.$color);
 			if(this.$info != null){
-				var data = '{"type":"FeatureCollection","features":[' + this.$info.slice(0, -3) + "]}'";
-				console.log("Json Data - "+ data + " - ");
+				var inf = this.$info.slice(1);
+				var data = '{"type":"FeatureCollection","features":[' + inf.slice(0, -3) + "]}')";
+				console.log("Json Data - "+ JSON.parse(data) + " - ");
 			}
 			
 			
