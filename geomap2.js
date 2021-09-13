@@ -301,7 +301,7 @@
 			//console.log("JSON " + this.$info);
 			//console.log("Center " + this.$color);
 			
-			console.log("DOM Element " + shadowRoot.getElementById("map"));
+			//console.log("DOM Element " + shadowRoot.getElementById("map"));
 
                 }
 		onCustomWidgetBeforeUpdate(changedProperties) {
