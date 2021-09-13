@@ -72,8 +72,10 @@
             function load(prop, ele, cent) {
                 if (!initCalled) {
                     initCalled = true;
-		    console.log("center - "+ cent);
-		    let cen = [cent];
+		    
+		    let cen = [];
+		    cen[0] = parseFloat(cent.split(',')[0]);
+		    cen[1] = parseFloat(cent.split(',')[1]);
 		    console.log("center " + cen);
 			
                     map = new maptalks.Map(ele, {
