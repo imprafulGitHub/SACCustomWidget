@@ -330,7 +330,7 @@
 				//console.log("Json Data - "+ JSON.parse(data));
 				console.log("center - "+ center);
 				let ele = this._shadowRoot;
-				console.log(ele);
+				console.log(ele.getElementById("map"));
 				//setTimeout(function () {
 				//    load(data, this._shadowRoot.getElementById("map"), center);
 				    //load(data, this.$element, center);
