@@ -69,13 +69,14 @@
   	      `;
 
             let initCalled = false;
-            function load(prop, ele, center) {
+            function load(prop, ele, cent) {
                 if (!initCalled) {
                     initCalled = true;
 		    console.log("center - "+ center);
+		    let cen = cent;
 			
                     map = new maptalks.Map(ele, {
-                        "center": [42.4561,-73.9277],
+                        "center": [cen],
                         zoom: 10,
                         pitch: 65,
                         baseLayer: new maptalks.TileLayer('tile', {
