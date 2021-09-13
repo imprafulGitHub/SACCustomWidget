@@ -74,7 +74,7 @@
                     initCalled = true;
 			
                     map = new maptalks.Map(ele, {
-                        "center": [center],
+                        "center": [-74.09346574928561, 40.6315742625236],
                         zoom: 12,
                         pitch: 65,
                         baseLayer: new maptalks.TileLayer('tile', {
@@ -273,10 +273,11 @@
             }
 
             class Box extends HTMLElement {
+		let shadowRoot;    
                 constructor() {
                     super();
-                    //let shadowRoot = this.attachShadow({ mode: "open" });
-                    //shadowRoot.appendChild(template.content.cloneNode(true));
+                    this.shadowRoot = this.attachShadow({ mode: "open" });
+                    shadowRoot.appendChild(template.content.cloneNode(true));
                     
 		    //var prop = '{"type":"FeatureCollection","features":[' +
 			//	'{"type": "Feature", "properties": { "City": "New York", "Country": "US", "Contract": "30000033", "ZipCode": "10059", "Amount": "78.68" }, "geometry": { "type": "Point", "coordinates": [113.950375, 22.534875] } },' +
@@ -305,8 +306,7 @@
 		}
 
 		onCustomWidgetAfterUpdate(changedProperties) {
-			let shadowRoot = this.attachShadow({ mode: "open" });
-                    	shadowRoot.appendChild(template.content.cloneNode(true));
+			
 				
 			if ("value" in changedProperties) {
 				this.$value = changedProperties["value"];
@@ -328,7 +328,7 @@
 				console.log("center - "+ center);
 				
 				setTimeout(function () {
-				    load(data, shadowRoot.getElementById("map"), center);
+				    load(data, this.shadowRoot.getElementById("map"), center);
 				}, 3000);
 			}
 		}   
