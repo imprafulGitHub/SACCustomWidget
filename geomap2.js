@@ -74,7 +74,7 @@
                     initCalled = true;
 		    console.log("center - "+ cent);
 		    let cen = [cent];
-		     	
+		    console.log("center " + cen);
 			
                     map = new maptalks.Map(ele, {
                         "center": cen,
