@@ -72,8 +72,7 @@
             function load(prop, ele) {
                 if (!initCalled) {
                     initCalled = true;
-                    //console.log("Data - " + JSON.parse(prop));
-
+			
                     map = new maptalks.Map(ele, {
                         "center": [113.98448073352165, 22.53682833203598],
                         zoom: 15,
@@ -103,8 +102,6 @@
 
                     };
                     threeLayer.addTo(map);
-
-
                 }
             }
 
@@ -185,7 +182,7 @@
                             const tooltip = this.getToolTip();
                             tooltip._content = `value:${height}`;
                         }
-                        //             //override infowindow
+                        //override infowindow
                         if (e.type === 'click' && data) {
                             const height = data.value;
                             const city = data.city;
@@ -281,22 +278,22 @@
                     let shadowRoot = this.attachShadow({ mode: "open" });
                     shadowRoot.appendChild(template.content.cloneNode(true));
                     
-		    var prop = '{"type":"FeatureCollection","features":[' +
-				'{"type": "Feature", "properties": { "City": "New York", "Country": "US", "Contract": "30000033", "ZipCode": "10059", "Amount": "78.68" }, "geometry": { "type": "Point", "coordinates": [113.950375, 22.534875] } },' +
-				'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.950625, 22.534875] } },' +
-				'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"98.68"}, "geometry": { "type":"Point", "coordinates": [113.930625, 22.516125] } },' +
-				'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"78.68"}, "geometry": { "type":"Point", "coordinates": [113.930375, 22.516125] } },' +
-				'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.930125, 22.515625] } },' +
-				'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"98.68"}, "geometry": { "type":"Point", "coordinates": [113.930125, 22.515875] } },' +
-				'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"78.68"}, "geometry": { "type":"Point", "coordinates": [113.930375, 22.515625] } },' +
-				'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.929625, 22.515625] } },'+
-				'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
+		    //var prop = '{"type":"FeatureCollection","features":[' +
+			//	'{"type": "Feature", "properties": { "City": "New York", "Country": "US", "Contract": "30000033", "ZipCode": "10059", "Amount": "78.68" }, "geometry": { "type": "Point", "coordinates": [113.950375, 22.534875] } },' +
+			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.950625, 22.534875] } },' +
+			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"98.68"}, "geometry": { "type":"Point", "coordinates": [113.930625, 22.516125] } },' +
+			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"78.68"}, "geometry": { "type":"Point", "coordinates": [113.930375, 22.516125] } },' +
+			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.930125, 22.515625] } },' +
+			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"98.68"}, "geometry": { "type":"Point", "coordinates": [113.930125, 22.515875] } },' +
+			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"78.68"}, "geometry": { "type":"Point", "coordinates": [113.930375, 22.515625] } },' +
+			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.929625, 22.515625] } },'+
+			//	'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
 			
 			
 			
-                    setTimeout(function () {
-                        load(prop, shadowRoot.getElementById("map"));
-                    }, 3000);
+                    //setTimeout(function () {
+                    //    load(prop, shadowRoot.getElementById("map"));
+                    //}, 3000);
 
                 }
 		onCustomWidgetBeforeUpdate(changedProperties) {
@@ -316,17 +313,12 @@
 				this.$color = changedProperties["color"];
 			}
 			
-			
-			
-			//this.render(this.$value, this.$info, this.$color);
 			if(this.$info != null){
-				//var inf = this.$info.slice(1);
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
-				console.log("Json Data - "+ JSON.parse(data));
-				console.log("center - "+ this.$color);
+				//console.log("Json Data - "+ JSON.parse(data));
+				//console.log("center - "+ this.$color);
+				load(data, shadowRoot.getElementById("map"));
 			}
-			
-			
 		}   
             }
             window.customElements.define("com-demo-gauge", Box);
