@@ -327,7 +327,7 @@
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
 				var center = this.$color;
 				//console.log("Json Data - "+ JSON.parse(data));
-				//console.log("center - "+ center);
+				console.log("center - "+ center);
 				
 				//setTimeout(function () {
 				//    load(data, this.shadowRoot.getElementById("map"), center);
