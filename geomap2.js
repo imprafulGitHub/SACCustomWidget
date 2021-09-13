@@ -305,6 +305,9 @@
 		}
 
 		onCustomWidgetAfterUpdate(changedProperties) {
+			let shadowRoot = this.attachShadow({ mode: "open" });
+                    	shadowRoot.appendChild(template.content.cloneNode(true));
+				
 			if ("value" in changedProperties) {
 				this.$value = changedProperties["value"];
 			}
@@ -318,14 +321,12 @@
 			}
 			
 			if(this.$info != null){
-				let shadowRoot = this.attachShadow({ mode: "open" });
-                    		shadowRoot.appendChild(template.content.cloneNode(true));
 				
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
 				var center = this.$color;
 				//console.log("Json Data - "+ JSON.parse(data));
-				//console.log("center - "+ center);
-				console.log("custom widget load");
+				console.log("center - "+ center);
+				
 				setTimeout(function () {
 				    load(data, shadowRoot.getElementById("map"), center);
 				}, 3000);
