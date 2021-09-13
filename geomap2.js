@@ -275,8 +275,8 @@
             class Box extends HTMLElement {
                 constructor() {
                     super();
-                    let shadowRoot = this.attachShadow({ mode: "open" });
-                    shadowRoot.appendChild(template.content.cloneNode(true));
+                    //let shadowRoot = this.attachShadow({ mode: "open" });
+                    //shadowRoot.appendChild(template.content.cloneNode(true));
                     
 		    //var prop = '{"type":"FeatureCollection","features":[' +
 			//	'{"type": "Feature", "properties": { "City": "New York", "Country": "US", "Contract": "30000033", "ZipCode": "10059", "Amount": "78.68" }, "geometry": { "type": "Point", "coordinates": [113.950375, 22.534875] } },' +
@@ -295,9 +295,9 @@
                     //    load(prop, shadowRoot.getElementById("map"));
                     //}, 3000);
 			
-			console.log("constructor load");
-			console.log("JSON " + this.$info);
-			console.log("Center " + this.$color);
+			//console.log("constructor load");
+			//console.log("JSON " + this.$info);
+			//console.log("Center " + this.$color);
 
                 }
 		onCustomWidgetBeforeUpdate(changedProperties) {
@@ -318,12 +318,17 @@
 			}
 			
 			if(this.$info != null){
+				let shadowRoot = this.attachShadow({ mode: "open" });
+                    		shadowRoot.appendChild(template.content.cloneNode(true));
+				
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
 				var center = this.$color;
 				//console.log("Json Data - "+ JSON.parse(data));
 				//console.log("center - "+ center);
 				console.log("custom widget load");
-				//load(data, shadowRoot.getElementById("map"), center);
+				setTimeout(function () {
+				    load(data, shadowRoot.getElementById("map"), center);
+				}, 3000);
 			}
 		}   
             }
