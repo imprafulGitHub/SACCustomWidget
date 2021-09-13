@@ -330,11 +330,11 @@
 				//console.log("Json Data - "+ JSON.parse(data));
 				console.log("center - "+ center);
 				let ele = this._shadowRoot;
-				console.log(ele.getElementById("map"));
-				//setTimeout(function () {
+				//console.log(ele.getElementById("map"));
+				setTimeout(function () {
 				//    load(data, this._shadowRoot.getElementById("map"), center);
 				    load(data, ele.getElementById("map"), center);
-				//}, 3000);
+				}, 3000);
 			}
 		}   
             }
