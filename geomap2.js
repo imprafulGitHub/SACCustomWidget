@@ -294,6 +294,10 @@
                     //setTimeout(function () {
                     //    load(prop, shadowRoot.getElementById("map"));
                     //}, 3000);
+			
+			console.log("constructor load");
+			console.log("JSON " + this.$info);
+			console.log("Center " + this.$color);
 
                 }
 		onCustomWidgetBeforeUpdate(changedProperties) {
@@ -317,8 +321,9 @@
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
 				var center = this.$color;
 				//console.log("Json Data - "+ JSON.parse(data));
-				console.log("center - "+ center);
-				load(data, shadowRoot.getElementById("map"), center);
+				//console.log("center - "+ center);
+				console.log("custom widget load");
+				//load(data, shadowRoot.getElementById("map"), center);
 			}
 		}   
             }
