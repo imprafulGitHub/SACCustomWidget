@@ -273,10 +273,10 @@
             }
 
             class Box extends HTMLElement {
-		let shadowRoot;    
+		  
                 constructor() {
                     super();
-                    this.shadowRoot = this.attachShadow({ mode: "open" });
+                    let shadowRoot = this.attachShadow({ mode: "open" });
                     shadowRoot.appendChild(template.content.cloneNode(true));
                     
 		    //var prop = '{"type":"FeatureCollection","features":[' +
@@ -299,6 +299,12 @@
 			//console.log("constructor load");
 			//console.log("JSON " + this.$info);
 			//console.log("Center " + this.$color);
+			
+			setTimeout(function () {
+				console.log("Data " + this.$info);
+				console.log("center " + this.$color);
+				console.log("Prop " + this._props);
+			}, 5000);
 
                 }
 		onCustomWidgetBeforeUpdate(changedProperties) {
@@ -325,11 +331,11 @@
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
 				var center = this.$color;
 				//console.log("Json Data - "+ JSON.parse(data));
-				console.log("center - "+ center);
+				//console.log("center - "+ center);
 				
-				setTimeout(function () {
-				    load(data, this.shadowRoot.getElementById("map"), center);
-				}, 3000);
+				//setTimeout(function () {
+				//    load(data, this.shadowRoot.getElementById("map"), center);
+				//}, 3000);
 			}
 		}   
             }
