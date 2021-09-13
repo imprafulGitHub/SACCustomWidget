@@ -80,7 +80,7 @@
 			
                     map = new maptalks.Map(ele, {
                         "center": cen,
-                        zoom: 15,
+                        zoom: 14,
                         pitch: 85,
                         baseLayer: new maptalks.TileLayer('tile', {
                             urlTemplate: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
