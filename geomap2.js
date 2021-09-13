@@ -300,11 +300,7 @@
 			//console.log("JSON " + this.$info);
 			//console.log("Center " + this.$color);
 			
-			setTimeout(function () {
-				console.log("Data " + this.$info);
-				console.log("center " + this.$color);
-				console.log("Prop " + this._props);
-			}, 5000);
+			console.log("DOM Element " + shadowRoot.getElementById("map"));
 
                 }
 		onCustomWidgetBeforeUpdate(changedProperties) {
