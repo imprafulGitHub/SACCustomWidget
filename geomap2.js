@@ -76,7 +76,7 @@
 		    let cen = cent;
 			
                     map = new maptalks.Map(ele, {
-                        "center": [-73.9277,42.4561],
+                        "center": [-74.09346574928561, 40.6315742625236],
                         zoom: 10,
                         pitch: 65,
                         baseLayer: new maptalks.TileLayer('tile', {
