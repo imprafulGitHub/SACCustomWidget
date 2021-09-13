@@ -73,11 +73,12 @@
                 if (!initCalled) {
                     initCalled = true;
 		    console.log("center - "+ cent);
-		    let cen = cent;
+		    let cen = [cent];
+		     	
 			
                     map = new maptalks.Map(ele, {
-                        "center": [-74.09346574928561, 40.6315742625236],
-                        zoom: 10,
+                        "center": cen,
+                        zoom: 15,
                         pitch: 65,
                         baseLayer: new maptalks.TileLayer('tile', {
                             urlTemplate: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
