@@ -69,13 +69,13 @@
   	      `;
 
             let initCalled = false;
-            function load(prop, ele) {
+            function load(prop, ele, center) {
                 if (!initCalled) {
                     initCalled = true;
 			
                     map = new maptalks.Map(ele, {
-                        "center": [113.98448073352165, 22.53682833203598],
-                        zoom: 15,
+                        "center": [center],
+                        zoom: 12,
                         pitch: 65,
                         baseLayer: new maptalks.TileLayer('tile', {
                             urlTemplate: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
@@ -315,9 +315,10 @@
 			
 			if(this.$info != null){
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
+				var center = this.$color;
 				//console.log("Json Data - "+ JSON.parse(data));
-				//console.log("center - "+ this.$color);
-				load(data, shadowRoot.getElementById("map"));
+				console.log("center - "+ center);
+				load(data, shadowRoot.getElementById("map"), center);
 			}
 		}   
             }
