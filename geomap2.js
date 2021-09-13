@@ -72,7 +72,7 @@
             function load(prop, ele, cent) {
                 if (!initCalled) {
                     initCalled = true;
-		    console.log("center - "+ center);
+		    console.log("center - "+ cent);
 		    let cen = cent;
 			
                     map = new maptalks.Map(ele, {
