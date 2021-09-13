@@ -276,10 +276,10 @@
 		  
                 constructor() {
                     super();
-                    let shadowRoot = this.attachShadow({ mode: "open" });
-                    shadowRoot.appendChild(template.content.cloneNode(true));
+                    this.shadowRoot = this.attachShadow({ mode: "open" });
+                    this.shadowRoot.appendChild(template.content.cloneNode(true));
                     
-			this.$element = shadowRoot.getElementById("map");
+			//this.$element = shadowRoot.getElementById("map");
 		    //var prop = '{"type":"FeatureCollection","features":[' +
 			//	'{"type": "Feature", "properties": { "City": "New York", "Country": "US", "Contract": "30000033", "ZipCode": "10059", "Amount": "78.68" }, "geometry": { "type": "Point", "coordinates": [113.950375, 22.534875] } },' +
 			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.950625, 22.534875] } },' +
@@ -331,8 +331,8 @@
 				console.log("center - "+ center);
 				
 				setTimeout(function () {
-				    //load(data, this.shadowRoot.getElementById("map"), center);
-				    load(data, this.$element, center);
+				    load(data, this.shadowRoot.getElementById("map"), center);
+				    //load(data, this.$element, center);
 				}, 3000);
 			}
 		}   
