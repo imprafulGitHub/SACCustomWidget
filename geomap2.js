@@ -276,8 +276,8 @@
 		  
                 constructor() {
                     super();
-                    this.shadowRoot = this.attachShadow({ mode: "open" });
-                    this.shadowRoot.appendChild(template.content.cloneNode(true));
+                    this._shadowRoot = this.attachShadow({ mode: "open" });
+                    this._shadowRoot.appendChild(template.content.cloneNode(true));
                     
 			//this.$element = shadowRoot.getElementById("map");
 		    //var prop = '{"type":"FeatureCollection","features":[' +
@@ -329,11 +329,12 @@
 				var center = this.$color;
 				//console.log("Json Data - "+ JSON.parse(data));
 				console.log("center - "+ center);
-				
-				setTimeout(function () {
-				    load(data, this.shadowRoot.getElementById("map"), center);
+				let ele = this._shadowRoot;
+				console.log(ele);
+				//setTimeout(function () {
+				//    load(data, this._shadowRoot.getElementById("map"), center);
 				    //load(data, this.$element, center);
-				}, 3000);
+				//}, 3000);
 			}
 		}   
             }
