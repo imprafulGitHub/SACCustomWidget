@@ -333,7 +333,7 @@
 				console.log(ele.getElementById("map"));
 				//setTimeout(function () {
 				//    load(data, this._shadowRoot.getElementById("map"), center);
-				    //load(data, this.$element, center);
+				    load(data, ele.getElementById("map"), center);
 				//}, 3000);
 			}
 		}   
