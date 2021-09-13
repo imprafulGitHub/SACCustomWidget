@@ -327,7 +327,7 @@
 				this.$color = changedProperties["color"];
 			}
 			
-			if(this.$info != null){
+			if(this.$info != null && this.$info != '' && this.$info != undefined){
 				
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
 				var center = this.$color;
