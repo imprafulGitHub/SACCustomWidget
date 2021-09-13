@@ -75,7 +75,7 @@
 		    console.log("center - "+ center);
 			
                     map = new maptalks.Map(ele, {
-                        "center": [center],
+                        "center": [42.4561,-73.9277],
                         zoom: 10,
                         pitch: 65,
                         baseLayer: new maptalks.TileLayer('tile', {
@@ -112,7 +112,7 @@
                 highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
                 
 		let data = "";
-		    
+		    console.log("data - " + prop);
 		var json = JSON.parse(prop);
                 for (var i = 0; i < json.features.length; i++) {
                      data = json.features.slice(0, Infinity).map(function (dataItem) {
