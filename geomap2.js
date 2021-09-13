@@ -118,7 +118,8 @@
                         dataItem = gcoord.transform(dataItem, gcoord.AMap, gcoord.WGS84);
                         return {
                             coordinate: dataItem.geometry.coordinates,
-                            height: dataItem.properties.Amount * 2,
+                            //height: dataItem.properties.Amount * 2,
+		            height : 200,		
                             value: dataItem.properties.Amount,
                             city: dataItem.properties.City,
                             zip: dataItem.properties.ZipCode,
