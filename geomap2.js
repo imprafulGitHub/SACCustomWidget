@@ -81,7 +81,7 @@
                     map = new maptalks.Map(ele, {
                         "center": cen,
                         zoom: 14,
-                        pitch: 85,
+                        pitch: 75,
                         baseLayer: new maptalks.TileLayer('tile', {
                             urlTemplate: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
                             subdomains: ['a', 'b', 'c', 'd', 'e'],
@@ -330,7 +330,7 @@
 				this.$color = changedProperties["color"];
 			}
 			
-			console.log("result change of geo 2");
+			//console.log("result change of geo 2");
 			if(this.$info != null && this.$info != '' && this.$info != undefined)
 			{
 				
