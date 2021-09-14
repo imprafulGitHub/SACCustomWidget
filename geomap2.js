@@ -81,7 +81,7 @@
                     map = new maptalks.Map(ele, {
                         "center": cen,
                         zoom: 14,
-                        pitch: 65,
+                        pitch: 85,
                         baseLayer: new maptalks.TileLayer('tile', {
                             urlTemplate: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
                             subdomains: ['a', 'b', 'c', 'd', 'e'],
