@@ -331,7 +331,7 @@
 			}
 			
 			console.log("result change of geo 2");
-			//if(this.$info != null && this.$info != '' && this.$info != undefined)
+			if(this.$info != null && this.$info != '' && this.$info != undefined)
 			{
 				
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
