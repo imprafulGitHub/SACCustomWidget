@@ -1,6 +1,6 @@
 (function () {
 	
-            LoadScript();
+            //LoadScript();
             function LoadScript() {
 
                 const script2 = document.createElement('script');
@@ -70,6 +70,7 @@
 
             let initCalled = false;
             function load(prop, ele, cent) {
+		    await LoadScript();
                 if (!initCalled) {
                     initCalled = true;
 		    
@@ -304,7 +305,7 @@
                     //    load(prop, shadowRoot.getElementById("map"));
                     //}, 3000);
 			
-			//console.log("constructor load");
+			console.log("constructor load");
 			//console.log("JSON " + this.$info);
 			//console.log("Center " + this.$color);
 			
