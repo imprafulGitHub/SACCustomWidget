@@ -1,6 +1,6 @@
 (function () {
 	
-            //LoadScript();
+            LoadScript();
             function LoadScript() {
 
                 const script2 = document.createElement('script');
@@ -70,7 +70,7 @@
 
             let initCalled = false;
             function load(prop, ele, cent) {
-		    await LoadScript();
+		    LoadScript();
                 if (!initCalled) {
                     initCalled = true;
 		    
