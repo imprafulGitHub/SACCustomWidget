@@ -332,7 +332,7 @@
 			if ("color" in changedProperties) {
 				this.$color = changedProperties["color"];
 			}
-			LoadScript();
+			await LoadScript();
 			console.log("result change of geo 2");
 			if(this.$info != null && this.$info != '' && this.$info != undefined)
 			{
