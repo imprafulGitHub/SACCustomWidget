@@ -344,7 +344,7 @@
 				setTimeout(function () {
 				//    load(data, this._shadowRoot.getElementById("map"), center);
 				    load(data, ele.getElementById("map"), center);
-				}, 3000);
+				}, 30);
 			}
 		}   
             }
