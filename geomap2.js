@@ -299,7 +299,23 @@
 			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.929625, 22.515625] } },'+
 			//	'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
 			
-			
+			LoadScript();
+			if(this.$info != null && this.$info != '' && this.$info != undefined)
+			{
+				
+				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
+				var center = this.$color;
+				
+				let ele = this._shadowRoot;
+				//console.log(ele.getElementById("map"));
+				console.log("result change of geo 2 If condition");
+				console.log(data);
+				load(data, ele.getElementById("map"), center);
+				//setTimeout(function () {
+				//    load(data, this._shadowRoot.getElementById("map"), center);
+				//    load(data, ele.getElementById("map"), center);
+				//}, 3000);
+			}
 			
                     //setTimeout(function () {
                     //    load(prop, shadowRoot.getElementById("map"));
