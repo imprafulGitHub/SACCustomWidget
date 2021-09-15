@@ -2,7 +2,7 @@
 	
             LoadScript();
             function LoadScript() {
-
+		console.log("Load script funcation");
                 const script2 = document.createElement('script');
                 script2.type = 'text/javascript';
                 script2.src = 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js';
@@ -70,7 +70,7 @@
 
             let initCalled = false;
             function load(prop, ele, cent) {
-		
+		console.log("Load funcation");
                 if (!initCalled) {
                     initCalled = true;
 		    
