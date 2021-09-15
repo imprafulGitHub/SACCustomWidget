@@ -41,7 +41,8 @@
                 document.head.appendChild(script7);
                 eval(script7);
 
-          }
+          console.log("Load script funcation ended");
+	    }
 
             let template = document.createElement("template");
             template.innerHTML = `
@@ -303,6 +304,8 @@
 			if(this.$info != null && this.$info != '' && this.$info != undefined)
 			{
 				
+				console.log("if condition of constructor");
+				console.log("display info" + this.$info);
 				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
 				var center = this.$color;
 				
@@ -355,10 +358,10 @@
 				var center = this.$color;
 				
 				let ele = this._shadowRoot;
-				//console.log(ele.getElementById("map"));
+				console.log(ele.getElementById("map"));
 				console.log("result change of geo 2 If condition");
 				console.log(data);
-				load(data, ele.getElementById("map"), center);
+				this.load(data, ele.getElementById("map"), center);
 				//setTimeout(function () {
 				//    load(data, this._shadowRoot.getElementById("map"), center);
 				//    load(data, ele.getElementById("map"), center);
