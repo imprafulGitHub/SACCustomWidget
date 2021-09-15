@@ -74,6 +74,7 @@
 		console.log("Load funcation");
                 if (!initCalled) {
                     initCalled = true;
+		console.log("Load funcation if condition !initCalled");
 		    
 		    let cen = [];
 		    cen[0] = parseFloat(cent.split(',')[0]);
@@ -110,7 +111,8 @@
                     };
                     threeLayer.addTo(map);
                 }
-            }
+            console.log("Load funcation ended");
+	    }
 
             function addBar(scene, prop, ele) {
                 bars = [], selectMesh = [];
