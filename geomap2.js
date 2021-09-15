@@ -361,7 +361,7 @@
 				console.log(ele.getElementById("map"));
 				console.log("result change of geo 2 If condition");
 				console.log(data);
-				this.load(data, ele.getElementById("map"), center);
+				load(data, ele.getElementById("map"), center);
 				//setTimeout(function () {
 				//    load(data, this._shadowRoot.getElementById("map"), center);
 				//    load(data, ele.getElementById("map"), center);
