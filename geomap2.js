@@ -301,24 +301,7 @@
 			//	'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
 			
 			 LoadScript();
-			if(this.$info != null && this.$info != '' && this.$info != undefined)
-			{
-				
-				console.log("if condition of constructor");
-				console.log("display info" + this.$info);
-				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
-				var center = this.$color;
-				
-				let ele = this._shadowRoot;
-				//console.log(ele.getElementById("map"));
-				console.log("result change of geo 2 If condition");
-				console.log(data);
-				load(data, ele.getElementById("map"), center);
-				//setTimeout(function () {
-				//    load(data, this._shadowRoot.getElementById("map"), center);
-				//    load(data, ele.getElementById("map"), center);
-				//}, 3000);
-			}
+			
 			
                     //setTimeout(function () {
                     //    load(prop, shadowRoot.getElementById("map"));
@@ -349,7 +332,7 @@
 			if ("color" in changedProperties) {
 				this.$color = changedProperties["color"];
 			}
-			await LoadScript();
+			LoadScript();
 			console.log("result change of geo 2");
 			if(this.$info != null && this.$info != '' && this.$info != undefined)
 			{
