@@ -72,7 +72,7 @@
             let initCalled = false;
             function load(prop, ele, cent) {
 		console.log("Load funcation");
-                if (!initCalled) {
+                {
                     initCalled = true;
 		console.log("Load funcation if condition !initCalled");
 		    
