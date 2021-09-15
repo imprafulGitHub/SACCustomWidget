@@ -1,7 +1,7 @@
 (function () {
 	
             LoadScript();
-            async function LoadScript() {
+             function LoadScript() {
 		console.log("Load script funcation");
                 const script2 = document.createElement('script');
                 script2.type = 'text/javascript';
