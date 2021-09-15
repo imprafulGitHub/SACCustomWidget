@@ -115,6 +115,7 @@
 	    }
 
             function addBar(scene, prop, ele) {
+		    console.log("addbar funcation started");
                 bars = [], selectMesh = [];
                 material = new THREE.MeshLambertMaterial({ color: 'rgb(38,160,146)', transparent: true, opacity: 1 });
                 highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
@@ -302,7 +303,7 @@
 			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.929625, 22.515625] } },'+
 			//	'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
 			
-			 LoadScript();
+			
 			
 			
                     //setTimeout(function () {
@@ -334,7 +335,7 @@
 			if ("color" in changedProperties) {
 				this.$color = changedProperties["color"];
 			}
-			 LoadScript();
+			 
 			console.log("result change of geo 2");
 			if(this.$info != null && this.$info != '' && this.$info != undefined)
 			{
