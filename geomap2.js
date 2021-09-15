@@ -70,7 +70,7 @@
 
             let initCalled = false;
             function load(prop, ele, cent) {
-		    LoadScript();
+		
                 if (!initCalled) {
                     initCalled = true;
 		    
