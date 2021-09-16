@@ -74,13 +74,17 @@
 		console.log("Load funcation");
                 {
                     initCalled = true;
+		
 		console.log("Load funcation if condition !initCalled");
 		    
 		    let cen = [];
 		    cen[0] = parseFloat(cent.split(',')[0]);
 		    cen[1] = parseFloat(cent.split(',')[1]);
 		    console.log("center " + cen);
-			
+		   // if (this.$map != null && this.$map != '' && this.$map != undefined){  
+			    
+			  console.log(map);  
+			    //map.remove();}
                     map = new maptalks.Map(ele, {
                         "center": cen,
                         zoom: 14,
