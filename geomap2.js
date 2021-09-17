@@ -64,7 +64,8 @@
   		      </style>
 		      <div id="map"></div>
   	      `;
-
+         
+	 var map = "";
          function load(prop, ele, cent) {
 	    let cen = [];
 	    cen[0] = parseFloat(cent.split(',')[0]);
