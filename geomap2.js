@@ -40,13 +40,10 @@
                 script7.src = 'https://cdn.jsdelivr.net/npm/three@0.104.0/examples/js/libs/stats.min.js';
                 document.head.appendChild(script7);
                 eval(script7);
-
-          
 	    }
 
             let template = document.createElement("template");
             template.innerHTML = `
-              
   		      <style>
                  	      @import "https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css";
   			      html,
@@ -65,47 +62,47 @@
 			      }
                     
   		      </style>
-  		
 		      <div id="map"></div>
   	      `;
 
-            function load(prop, ele, cent) {
-		
-		    let cen = [];
-		    cen[0] = parseFloat(cent.split(',')[0]);
-		    cen[1] = parseFloat(cent.split(',')[1]);
-		    console.log("center " + cen);
-			    
-                    map = new maptalks.Map(ele, {
-                        "center": cen,
-                        zoom: 14,
-                        pitch: 85,
-                        baseLayer: new maptalks.TileLayer('tile', {
-                            urlTemplate: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-                            subdomains: ['a', 'b', 'c', 'd', 'e'],
-                        })
-                    });
-                    // the ThreeLayer to draw buildings
-                    threeLayer = new maptalks.ThreeLayer('t', {
-                        forceRenderOnMoving: true,
-                        forceRenderOnRotating: true
-                        // animation: true
-                    });
-                    threeLayer.prepareToDraw = function (gl, scene, camera) {
-                        stats = new Stats();
-                        stats.domElement.style.zIndex = 100;
-                        //document.getElementById('Geomap').appendChild(stats.domElement);
-                        ele.appendChild(stats.domElement);
+         function load(prop, ele, cent) {
+	    let cen = [];
+	    cen[0] = parseFloat(cent.split(',')[0]);
+	    cen[1] = parseFloat(cent.split(',')[1]);
 
-                        var light = new THREE.DirectionalLight(0xffffff);
-                        light.position.set(0, -10, 10).normalize();
-                        scene.add(light);
-                        scene.add(new THREE.AmbientLight(0xffffff, 0.2));
-                        addBar(scene, prop, ele);
-
-                    };
-                    threeLayer.addTo(map);
+	    if(map != ""){
+		map.remove();
 	    }
+	    map = new maptalks.Map(ele, {
+		"center": cen,
+		zoom: 14,
+		pitch: 85,
+		baseLayer: new maptalks.TileLayer('tile', {
+		    urlTemplate: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+		    subdomains: ['a', 'b', 'c', 'd', 'e'],
+		})
+	    });
+	    // the ThreeLayer to draw buildings
+	    threeLayer = new maptalks.ThreeLayer('t', {
+		forceRenderOnMoving: true,
+		forceRenderOnRotating: true
+		// animation: true
+	    });
+	    threeLayer.prepareToDraw = function (gl, scene, camera) {
+		stats = new Stats();
+		stats.domElement.style.zIndex = 100;
+		//document.getElementById('Geomap').appendChild(stats.domElement);
+		ele.appendChild(stats.domElement);
+
+		var light = new THREE.DirectionalLight(0xffffff);
+		light.position.set(0, -10, 10).normalize();
+		scene.add(light);
+		scene.add(new THREE.AmbientLight(0xffffff, 0.2));
+		addBar(scene, prop, ele);
+
+	    };
+	    threeLayer.addTo(map);
+	}
 
             function addBar(scene, prop, ele) {
                 bars = [], selectMesh = [];
@@ -322,7 +319,7 @@
 				
 			     let ele = this._shadowRoot;
 			     
-			     console.log("JSON - " + data);
+			     //console.log("JSON - " + data);
 			     load(data, ele.getElementById("map"), center);
 			     //setTimeout(function () {
 			     //    load(data, this._shadowRoot.getElementById("map"), center);
