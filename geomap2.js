@@ -41,7 +41,7 @@
                 document.head.appendChild(script7);
                 eval(script7);
 
-          console.log("Load script funcation ended");
+          
 	    }
 
             let template = document.createElement("template");
@@ -69,22 +69,13 @@
 		      <div id="map"></div>
   	      `;
 
-            let initCalled = false;
             function load(prop, ele, cent) {
-		console.log("Load funcation");
-                {
-                    initCalled = true;
 		
-		console.log("Load funcation if condition !initCalled");
-		    
 		    let cen = [];
 		    cen[0] = parseFloat(cent.split(',')[0]);
 		    cen[1] = parseFloat(cent.split(',')[1]);
 		    console.log("center " + cen);
-		   // if (this.$map != null && this.$map != '' && this.$map != undefined){  
 			    
-			  console.log(map);  
-			    //map.remove();}
                     map = new maptalks.Map(ele, {
                         "center": cen,
                         zoom: 14,
@@ -114,18 +105,14 @@
 
                     };
                     threeLayer.addTo(map);
-                }
-            console.log("Load funcation ended");
 	    }
 
             function addBar(scene, prop, ele) {
-		    console.log("addbar funcation started");
                 bars = [], selectMesh = [];
                 material = new THREE.MeshLambertMaterial({ color: 'rgb(38,160,146)', transparent: true, opacity: 1 });
                 highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
                 
 		let data = "";
-		    console.log("data - " + prop);
 		var json = JSON.parse(prop);
                 for (var i = 0; i < json.features.length; i++) {
                      data = json.features.slice(0, Infinity).map(function (dataItem) {
@@ -157,7 +144,6 @@
                     dx: 10
                 });
                 threeLayer.addMesh(bars);
-
 
                 //infowindow test
                 box.setInfoWindow({
@@ -296,7 +282,7 @@
                     this._shadowRoot.appendChild(template.content.cloneNode(true));
                     
 			//this.$element = shadowRoot.getElementById("map");
-		    //var prop = '{"type":"FeatureCollection","features":[' +
+		        //var prop = '{"type":"FeatureCollection","features":[' +
 			//	'{"type": "Feature", "properties": { "City": "New York", "Country": "US", "Contract": "30000033", "ZipCode": "10059", "Amount": "78.68" }, "geometry": { "type": "Point", "coordinates": [113.950375, 22.534875] } },' +
 			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.950625, 22.534875] } },' +
 			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"98.68"}, "geometry": { "type":"Point", "coordinates": [113.930625, 22.516125] } },' +
@@ -307,27 +293,16 @@
 			//	'{"type":"Feature", "properties": { "City":"New York", "Country":"US", "Contract":"30000033", "ZipCode":"10059", "Amount":"88.68"}, "geometry": { "type":"Point", "coordinates": [113.929625, 22.515625] } },'+
 			//	'{"type":"Feature","properties":{"City":"New York","Country":"US","Contract":"30000033","ZipCode":"10059","Amount":"98.68"},"geometry":{"type":"Point","coordinates":[114.151875,22.555125]}}]}';
 			
+                        //setTimeout(function () {
+                        //    load(prop, shadowRoot.getElementById("map"));
+                        //}, 3000);
 			
-			
-			
-                    //setTimeout(function () {
-                    //    load(prop, shadowRoot.getElementById("map"));
-                    //}, 3000);
-			
-			console.log("constructor load");
-			//console.log("JSON " + this.$info);
-			//console.log("Center " + this.$color);
-			
-			//console.log("DOM Element " + shadowRoot.getElementById("map"));
-
                 }
 		onCustomWidgetBeforeUpdate(changedProperties) {
 			this._props = { ...this._props, ...changedProperties };
 		}
 
 		onCustomWidgetAfterUpdate(changedProperties) {
-			
-				
 			if ("value" in changedProperties) {
 				this.$value = changedProperties["value"];
 			}
@@ -340,22 +315,19 @@
 				this.$color = changedProperties["color"];
 			}
 			 
-			console.log("result change of geo 2");
 			if(this.$info != null && this.$info != '' && this.$info != undefined)
 			{
+			     var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
+			     var center = this.$color;
 				
-				var data = '{"type":"FeatureCollection","features":[' + this.$info + "]}";
-				var center = this.$color;
-				
-				let ele = this._shadowRoot;
-				console.log(ele.getElementById("map"));
-				console.log("result change of geo 2 If condition");
-				console.log(data);
-				load(data, ele.getElementById("map"), center);
-				//setTimeout(function () {
-				//    load(data, this._shadowRoot.getElementById("map"), center);
-				//    load(data, ele.getElementById("map"), center);
-				//}, 3000);
+			     let ele = this._shadowRoot;
+			     
+			     console.log("JSON - " + data);
+			     load(data, ele.getElementById("map"), center);
+			     //setTimeout(function () {
+			     //    load(data, this._shadowRoot.getElementById("map"), center);
+			     //    load(data, ele.getElementById("map"), center);
+			     //}, 3000);
 			}
 		}   
             }
